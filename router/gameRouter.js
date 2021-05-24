@@ -79,7 +79,7 @@ router.put('/update-game/:id', function(req, res){
 
 
 router.delete('/delete-game/:id', function(req, res){
-    let found = games.map(item=>item.id === req.params.id)
+    let found = games.map(item=>item.id).indexOf(req.params.id)
     if(found===-1){
         res.json({message:"Game not found, cannot delete"})
     } else{
